@@ -1,4 +1,35 @@
-function addmark() {
-  var _0x501dec=_0x1b60;function _0x1b60(_0x4115eb,_0x4574d7){var _0x2647c1=_0x2647();return _0x1b60=function(_0x1b609d,_0x4a7026){_0x1b609d=_0x1b609d-0x13c;var _0x56c720=_0x2647c1[_0x1b609d];return _0x56c720;},_0x1b60(_0x4115eb,_0x4574d7);}(function(_0x428f9e,_0x2cffe1){var _0x35de41=_0x1b60,_0x4ec868=_0x428f9e();while(!![]){try{var _0x50637d=-parseInt(_0x35de41(0x13c))/0x1+parseInt(_0x35de41(0x142))/0x2+parseInt(_0x35de41(0x145))/0x3+parseInt(_0x35de41(0x13d))/0x4+parseInt(_0x35de41(0x144))/0x5+-parseInt(_0x35de41(0x141))/0x6*(parseInt(_0x35de41(0x140))/0x7)+-parseInt(_0x35de41(0x13e))/0x8*(-parseInt(_0x35de41(0x143))/0x9);if(_0x50637d===_0x2cffe1)break;else _0x4ec868['push'](_0x4ec868['shift']());}catch(_0x596d31){_0x4ec868['push'](_0x4ec868['shift']());}}}(_0x2647,0xdbdd2));var marker=new L[(_0x501dec(0x13f))]([35.9516516666667,-5.56096833333333]);function _0x2647(){var _0x380624=['820517ygtEbH','1352592SxTGKd','360UitUhS','Marker','35clgbLH','443754tZKGyg','857414QzBCYJ','31761KZAdTh','3156005mkBzIS','1602039JHQaYT'];_0x2647=function(){return _0x380624;};return _0x2647();}
-  map.addLayer(marker);
+
+
+
+
+//setInterval(function () { loadDoc(); }, 6000);
+
+var singleMarker = L.marker([35.9516516666667, -5.56096833333333]);
+var popup = singleMarker.bindPopup('Prueba')
+function loadDoc() {
+  alert("Ejecutando función")
 }
+
+
+
+
+L.Control.Layers.include({
+  getOverlays: function() {
+    // create hash to hold all layers
+    var control, layers;
+    layers = {};
+    control = this;
+    // loop thru all layers in control
+    control._layers.forEach(function(obj) {
+      var layerName;
+      // check if layer is an overlay
+      if (obj.overlay) {
+        // get name of overlay
+        layerName = obj.name;
+        // store whether it's present on the map or not
+        return layers[layerName] = control._map.hasLayer(obj.layer);
+      }
+    });
+    return layers;
+  }
+});
