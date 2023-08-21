@@ -4,8 +4,8 @@
 
 //setInterval(function () { loadDoc(); }, 6000);
 
-var singleMarker = L.marker([35.9516516666667, -5.56096833333333]);
-var popup = singleMarker.bindPopup('Prueba')
+var AIS = L.marker([35.9516516666667, -5.56096833333333]);
+var popup = AIS.bindPopup('Prueba')
 function loadDoc() {
   alert("Ejecutando función")
 }
