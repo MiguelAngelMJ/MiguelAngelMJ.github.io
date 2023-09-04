@@ -4,7 +4,7 @@ var mark = [];
 var AIS = new L.LayerGroup();
 ///var OTRO = new L.LayerGroup();
 let constlatitude=0;
-let control=true;
+let control1=true;
 ///otro([35.9516516666667,-5.56096833333333])
 ///otro([35.96516666667, -5.70])
 L.Control.Layers.include({
@@ -22,6 +22,7 @@ L.Control.Layers.include({
     return layers;
   }
 });
+
 function interv() {
   loadDoc();
   // comprobar si ya se ha configurado un intervalo
