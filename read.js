@@ -1,13 +1,18 @@
 
+var nIntervId;
 var mark = [];
 var AIS = new L.LayerGroup();
-let constlatitude = 0;
+///var OTRO = new L.LayerGroup();
+let constlatitude=0;
+let control=true;
+///otro([35.9516516666667,-5.56096833333333])
+///otro([35.96516666667, -5.70])
 L.Control.Layers.include({
-  getOverlays: function () {
+  getOverlays: function() {
     var control, layers;
     layers = {};
     control = this;
-    control._layers.forEach(function (obj) {
+    control._layers.forEach(function(obj) {
       var layerName;
       if (obj.overlay) {
         layerName = obj.name;
@@ -17,6 +22,13 @@ L.Control.Layers.include({
     return layers;
   }
 });
+function interv() {
+  loadDoc();
+  // comprobar si ya se ha configurado un intervalo
+  if (!nIntervId) {
+    nIntervId = setInterval(function () { loadDoc(); }, 10000);
+  }
+}
 function loadDoc() {
   if (mark.length > 0) {
     for (i = 0; i <= mark.length - 1; i++) {
@@ -24,8 +36,25 @@ function loadDoc() {
     }
     mark = [];
   }
-  add([35.9516516666667, constlatitude + -5.56096833333333]); add([35.96516666667, constlatitude + -5.7]); constlatitude = constlatitude + .2; add([35.9516516666667, constlatitude + -5.56096833333333]); add([35.96516666667, constlatitude + -5.7]);
+add([35.9516516666667, constlatitude+-5.56096833333333])
+add([35.96516666667, constlatitude+-5.70])
+constlatitude=constlatitude+0.2
 }
-function add(n) { var t = L.marker(n).addTo(AIS); t.bindPopup("Position:     " + n); mark.push(t) }
-function del(n) { AIS.removeLayer(mark[n]) }
-
+function add(coordinates) {
+var marker = L.marker(coordinates).addTo(AIS);
+marker.bindPopup('Position:     '+coordinates)
+mark.push(marker)
+}
+function otro(coordinates) {
+  var marker = L.marker(coordinates).addTo(OTRO);
+  marker.bindPopup('Position:     '+coordinates)
+  //mark.push(marker)
+  }
+function del(i) {
+  AIS.removeLayer(mark[i])
+}
+function SinterOp() {
+  clearInterval(nIntervId);
+  // liberar nuestro inervalId de la variable
+  nIntervId = null;
+}
