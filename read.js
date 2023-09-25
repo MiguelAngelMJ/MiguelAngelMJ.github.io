@@ -34,7 +34,7 @@ function add(lat, long, course) {
   marker.bindPopup('<div class="cabecera">DATOS AIS</div>'+'<br>'+'<div class="L1">'+'<br><b>Posicion: </b>' + [lat, long]+'</div>'+'<div class="L2">'+'<br><b>Rumbo: </b>'+'<br>'+course+'</br>'+'</div>',customOptions)
   mark.push(marker)
 }
-userIcon=L.icon({iconUrl:"/img/Vessel.png",iconSize:[27,25],iconAnchor:[20,10],popupAnchor:[-3,-20]});
+userIcon=L.icon({iconUrl:"Vessel.png",iconSize:[27,25],iconAnchor:[20,10],popupAnchor:[-3,-20]});
 function del(i) {
   AIS.removeLayer(mark[i])
 }
