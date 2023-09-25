@@ -22,35 +22,21 @@ function interv() {
   }
 }
 function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", 'AIS.json', true);
-  xhttp.send();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let datos = JSON.parse(this.responseText)
-     for (let ind of datos) {
-        cuentadatos = cuentadatos + 1;
-        }
-      if (cuentadatos > 0) {
-        if (mark.length > 0) {
-          for (i = 0; i <= mark.length - 1; i++) {
-            del(i)
-          }
-          mark = [];
-        }
-        for (let ind of datos) {
-          forcrear = forcrear + 1
-          add(ind.lat, ind.lon,ind.cors)
-        }
-      }
-      cuentadatos = 0;
-    }
-  }
+  add([35.9516516666667, 5.56096833333333])
+  add([35.96516666667, -5.70])
 }
 
-function add(lat, long, course) {
- console.log(lat,long,course)
+function SinterOp() {
+  clearInterval(nIntervId);
+  // liberar nuestro inervalId de la variable
+  nIntervId = null;
 }
+
+function add(coordinates) {
+  var marker = L.marker(coordinates).addTo(AIS);
+  marker.bindPopup('Position:     '+coordinates)
+  mark.push(marker)
+  }
 function del(i) {
  console.log(i)
 }
