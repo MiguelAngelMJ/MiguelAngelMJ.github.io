@@ -1,5 +1,6 @@
 
-var nIntervId,mark=[],AIS=new L.LayerGroup;let constlatitude=0,control=!0,cuentadatos=0,forcrear=0;
+var nIntervId,mark=[],AIS=new L.LayerGroup;let constlatitude=0,controlais=!0,cuentadatos=0,forcrear=0;
+
 L.Control.Layers.include({
   getOverlays: function () {
     var control, layers;
@@ -22,21 +23,24 @@ function interv() {
   }
 }
 function loadDoc() {
-  add([35.9516516666667, 5.56096833333333])
-  add([35.96516666667, -5.70])
+  add([35.9516516, 5.560968])
 }
 
 function SinterOp() {
-  clearInterval(nIntervId);
+ clearInterval(nIntervId);
   // liberar nuestro inervalId de la variable
   nIntervId = null;
 }
 
-function add(coordinates) {
-  var marker = L.marker(coordinates).addTo(AIS);
-  marker.bindPopup('Position:     '+coordinates)
-  mark.push(marker)
+function add([lat, long]) {
+  var markerais = L.marker([lat, long]).bindPopup('Position:     ' + [lat, long])
+  markerais.addTo(AIS)
+  //mark.push(marker)
+ // console.log ("latitude          "+ markerais)
+  console.log ("marcador      "+markerais)
+  //console.log ("AISlayer    "+AISlayergroup)
   }
 function del(i) {
  console.log(i)
 }
+//add(35.96516666667, -5.70)
