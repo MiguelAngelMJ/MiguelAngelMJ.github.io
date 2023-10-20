@@ -31,7 +31,7 @@ var customOptions =
     'className' : 'popupCustom'
     }
 
-function add(t,r,d,b,o,n,e,i,a,p,c){var s=L.marker([r,d],{icon:userIcon,rotationAngle:b-90}).addTo(AIS);s.bindPopup("<table><tr><th>DATOS AIS</th></tr><tr><td><b>Mmsi:  </b>"+[t]+"</td></tr><tr><td><b>Latitude:  </b>"+[r]+"</td></tr><tr><td><b>Longitude:  </b>"+[d]+"</td></tr><tr><td><b>Course:  </b>"+[b]+"</td></tr><tr><td><b>Speed:  </b>"+[o]+"</td></tr><tr><td><b>Heading:  </b>"+[n]+"</td></tr><tr><td><b>Timestamp:  </b>"+[e]+"</td></tr><tr><td><b>Name:  </b>"+[i]+"</td></tr><tr><td><b>Imo:  </b>"+[a]+"</td></tr><tr><td><b>ShipType:  </b>"+[p]+"</td></tr><tr><td><b>Callsign:  </b>"+[c]+"</td></tr></table>",customOptions),mark.push(s)}userIcon=L.icon({iconUrl:"GISMAR/AIS/b.png",iconSize:[27,25],iconAnchor:[20,10],popupAnchor:[-3,-20]});
+function add(t,r,d,b,o,n,e,i,a,p,c){var s=L.marker([r,d],{icon:userIcon,rotationAngle:b-90}).addTo(AIS);s.bindPopup("<table><tr><th>DATOS AIS</th></tr><tr><td><b>Mmsi:  </b>"+[t]+"</td></tr><tr><td><b>Latitude:  </b>"+[r]+"</td></tr><tr><td><b>Longitude:  </b>"+[d]+"</td></tr><tr><td><b>Course:  </b>"+[b]+"</td></tr><tr><td><b>Speed:  </b>"+[o]+"</td></tr><tr><td><b>Heading:  </b>"+[n]+"</td></tr><tr><td><b>Timestamp:  </b>"+[e]+"</td></tr><tr><td><b>Name:  </b>"+[i]+"</td></tr><tr><td><b>Imo:  </b>"+[a]+"</td></tr><tr><td><b>ShipType:  </b>"+[p]+"</td></tr><tr><td><b>Callsign:  </b>"+[c]+"</td></tr></table>",customOptions),mark.push(s)}userIcon=L.icon({iconUrl:"GISMAR/AIS/ICONOS/b.png",iconSize:[27,25],iconAnchor:[20,10],popupAnchor:[-3,-20]});
 
 function del(i) {
   AIS.removeLayer(mark[i])
