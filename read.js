@@ -20,7 +20,7 @@ function interv() {
     nIntervId = setInterval(function () { loadDoc(); }, 60000);
   }
 }
-function loadDoc(){const t=new XMLHttpRequest;t.open("GET","GISMAR/AIS/AIS.json",!0),t.send(),t.onreadystatechange=function(){if(4==this.readyState&&200==this.status){let t=JSON.parse(this.responseText);for(let e of t)cuentadatos+=1;if(cuentadatos>0){if(mark.length>0){for(i=0;i<=mark.length-1;i++)del(i);mark=[]}for(let e of t)forcrear+=1,add(e.mmsi,e.lat,e.lon,e.cors,e.speed,e.heading,e.timestamp,e.name,e.imo,e.shiptype,e.callsign)}cuentadatos=0}}}
+function loadDoc(){const t=new XMLHttpRequest;t.open("GET","AIS/AIS.json",!0),t.send(),t.onreadystatechange=function(){if(4==this.readyState&&200==this.status){let t=JSON.parse(this.responseText);for(let e of t)cuentadatos+=1;if(cuentadatos>0){if(mark.length>0){for(i=0;i<=mark.length-1;i++)del(i);mark=[]}for(let e of t)forcrear+=1,add(e.mmsi,e.lat,e.lon,e.cors,e.speed,e.heading,e.timestamp,e.name,e.imo,e.shiptype,e.callsign)}cuentadatos=0}}}
 var customPopup = "";
 
 // specify popup options 
