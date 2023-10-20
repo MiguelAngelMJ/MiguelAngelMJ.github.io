@@ -31,7 +31,8 @@ var customOptions =
     'width': '200',
     'className' : 'popupCustom'
     }
-function add(t,d,r,b,e,o,a,i,n,s,m){var p=L.marker([d,r],{icon:userIcon,rotationAngle:b-90}).addTo(AIS);p.bindPopup("<table><tr><th>DATOS AIS</th></tr><tr><td><b>Mmsi:  </b>"+[t]+"</td></tr><tr><td><b>Latitude:  </b>"+[d]+"</td></tr><tr><td><b>Longitude:  </b>"+[r]+"</td></tr><tr><td><b>Course:  </b>"+[b]+"</td></tr><tr><td><b>Speed:  </b>"+[e]+"</td></tr><tr><td><b>Heading:  </b>"+[o]+"</td></tr><tr><td><b>Timestamp:  </b>"+[a]+"</td></tr><tr><td><b>Name:  </b>"+[i]+"</td></tr><tr><td><b>Imo:  </b>"+[n]+"</td></tr><tr><td><b>ShipType:  </b>"+[s]+"</td></tr><tr><td><b>Callsign:  </b>"+[m]+"</td></tr></table>",customOptions),mark.push(p),console.log(s)}
+function add(t,d,r,b,e,a,o,i,n,m,p){var s=L.marker([d,r],{icon:userIcon,rotationAngle:b-90}).addTo(AIS);s.bindPopup("<table><tr><th>DATOS AIS</th></tr><tr><td><b>Name:  </b>"+[i]+"</td></tr><tr><td><b>Timestamp:  </b>"+[o]+"</td></tr><tr><td><b>Callsign:  </b>"+[p]+"</td></tr><tr><td><b>Imo:  </b>"+[n]+"</td></tr><tr><td><b>Mmsi:  </b>"+[t]+"</td></tr><tr><td><b>ShipType:  </b>"+[m]+"</td></tr><tr><td><b>Course:  </b>"+[b]+"</td></tr><tr><td><b>Speed:  </b>"+[e]+"</td></tr><tr><td><b>Heading:  </b>"+[a]+"</td></tr><tr><td><b>Latitude:  </b>"+[d]+"</td></tr><tr><td><b>Longitude:  </b>"+[lon]+"</td></tr></table>",customOptions),mark.push(s)}
+
 function del(i) {
   AIS.removeLayer(mark[i])
 }
